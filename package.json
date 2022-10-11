@@ -1,12 +1,29 @@
 {
-  "name": "testdir",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {},
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "name": "web",
+  "version": "2.0.0",
+  "private": true,
+  "browserslist": [
+    "last 2 versions",
+    ">0.3%",
+    "not ie > 0",
+    "not ie_mob > 0"
+  ],
+  "scripts": {
+    "build": "next build",
+    "dep:dev": "vercel --env NEXT_PUBLIC_ENVIRONMENT=stage",
+    "dep:prod": "cli-confirm \"Deploy to PRODUCTION and bypass tests, are you sure?\" && vercel --prod",
+    "dev": "next dev",
+    "dev:stage": "npm run dev:stage:dev",
+    "dev:stage:alfa": "USE_STAGE_SERVER=alfa next dev",
+    "dev:stage:beta": "USE_STAGE_SERVER=beta next dev",
+    "dev:stage:dev": "USE_STAGE_SERVER=dev next dev",
+    "lint": "next lint",
+    "prepare": "husky install",
+    "pretty-quick": "pretty-quick --staged",
+    "start": "next start",
+    "test": "jest -o",
+    "test-all": "jest"
+  },
   "dependencies": {
     "@greatsumini/react-facebook-login": "^3.2.1",
     "@react-hook/resize-observer": "^1.2.6",
